@@ -1,6 +1,6 @@
 from openai import OpenAI
 # 设置key
-client = OpenAI(api_key ='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')
+client = OpenAI(api_key ='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')
 # 获取模块
 models = client.models.list()
 
