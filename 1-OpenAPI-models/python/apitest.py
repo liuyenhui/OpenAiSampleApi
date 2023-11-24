@@ -1,9 +1,9 @@
 from openai import OpenAI
-# 设置key
-client = OpenAI(api_key ='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')
+client = OpenAI()
+
 # 获取模块
 models = client.models.list()
-
+# 打印支持的模块
 for model in models:
     print(model.id)
 

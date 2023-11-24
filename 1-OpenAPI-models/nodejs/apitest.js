@@ -1,9 +1,7 @@
 import {OpenAI }  from "openai";
 // 创建OpenAPI连接对象
-const client = new OpenAI({
-    apiKey:'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'
-});
-// 请求返回models (同步请求) 异步
+const client = new OpenAI();
+// 同步请求返回models (同步请求) 异步
 const response = await client.models.list();
 
 for(const model of response.data ){
