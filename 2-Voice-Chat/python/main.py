@@ -5,6 +5,11 @@ from openai import OpenAI
 #  1.读语音文件
 #-------------------------------
 client = OpenAI()
+
+# models = client.models.list()
+# print(models)
+
+
 # 当前文件路径
 path = os.path.dirname(__file__)
 # 上级目录
@@ -41,7 +46,7 @@ completion = client.chat.completions.create(
     max_tokens=300,
     # 模型发散想象力, 0~2,float,写做类要数值高,逻辑类数值低
     temperature=0.8,
-);
+)
 # 获取AI模型返回的消息
 result = completion.choices[0].message.content
 # total_tokens 消费token的总数
