@@ -3,10 +3,11 @@
 
 
 * 示例目录按代码复杂程度,递进排列,每个示例包含python和nodejs的代理实现
-  >首先你要设置你的OpanAI API key 环境变量
+  >首先你要设置你的OPENAI_API_KEY 与 OPENAI_BASE_URL 环境变量
 
   ```
-  export OPENAI_API_KEY='OpenAI api key'
+  export OPENAI_API_KEY='your OpenAI api key'
+  export OPENAI_BASE_URL='your cludeflare proxy url'
   ```
 
  

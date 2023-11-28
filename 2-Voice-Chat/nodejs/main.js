@@ -1,9 +1,15 @@
 import {resolve} from "path"
 import {OpenAI} from "openai"
+
+
 import {exec} from "child_process"
 import fs from "fs";
 
-const client = new OpenAI();
+// 注意 "openai": "^4.20.0" 中默认没有取系统环境变量中的 baseURL
+const client = new OpenAI({
+    baseURL:process.env.OPENAI_BASE_URL
+});
+
 //-------------------------------
 //  1.读语音文件
 //-------------------------------
