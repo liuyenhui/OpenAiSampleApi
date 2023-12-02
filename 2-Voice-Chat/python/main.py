@@ -1,22 +1,18 @@
 import os
 from openai import OpenAI
+from record import listen
+#-------------------------------
+#  1.录音到文件
+#-------------------------------
 
-#-------------------------------
-#  1.读语音文件
-#-------------------------------
+# init API 
 client = OpenAI()
 
-# models = client.models.list()
-# print(models)
+# 开始录音
+filename = listen()
 
-
-# 当前文件路径
-path = os.path.dirname(__file__)
-# 上级目录
-path = os.path.dirname(path)
-# 语音文件路径
-path += "/question.m4a"
-audio_file = open(path,"rb")
+# 读录音文件
+audio_file = open(filename,"rb")
 
 #-------------------------------
 #  2.OpenAI - 语音转文本
@@ -26,7 +22,6 @@ response = client.audio.transcriptions.create(
     model="whisper-1",
     file=audio_file
 )
-
 qs = response.text
 print(f'Question:{qs}')
 
