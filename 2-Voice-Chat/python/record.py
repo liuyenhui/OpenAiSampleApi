@@ -45,7 +45,7 @@ def listen(filename:str=path)->str:
         temp = np.max(audio_data)
         if temp > mindb and flag==False:
             flag =True
-            print("开始录音")
+            print(">>>")
             tempnum2=tempnum
 
         if flag:
