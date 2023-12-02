@@ -53,3 +53,5 @@ console.log(`AI[tokens(${completion.usage.total_tokens})]:${result}`);
 // 调用系统输出语音
 exec(`say "${result}"`);
 console.log("Done.")
+
+console.log('北京')
